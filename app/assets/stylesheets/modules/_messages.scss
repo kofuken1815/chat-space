@@ -150,11 +150,13 @@
           .text {
             height: 50px;
             padding: 0px 10px;
+            padding-right:30px;
             border-style: none;
             width: 100%;
           }
           .image{
             position: absolute;
+            cursor: pointer;
             right: 10px;
             .file{
               display: none;
@@ -171,6 +173,7 @@
           margin-left: 15px;
           border-style: none;
           margin-top: 20px;
+          cursor: pointer;
         }
       }
     } 
