@@ -1,0 +1,39 @@
+.wapper
+  .chat-main
+    .group-info
+      .left-box
+        .current-group test
+        %ul.member-list 
+          Member: 
+          %li.member
+            ken 
+          %li.member
+            ken 
+          %li.member
+            ken 
+      = link_to "#", class: "edit-btn" do
+        edit
+    .message-list
+      .message
+        .info 
+          .owner kenkofunakenkofuna
+          .date 2020/07/09(Thu)
+        .content 夏
+      .message
+        .info 
+          .owner kenkofunakenkofuna
+          .date 2020/07/09(Thu)
+        .content 冬
+      .message
+        .info 
+          .owner kenkofunakenkofuna
+          .date 2020/07/09(Thu)
+        .content 冬
+    .message-form
+      %form.new-message
+        .message-box 
+          %input{ placeholder: 'type a message', class:"text", type:'text'}
+          %label.image
+            = icon('far fa-image', class:"form-icon")
+            %input{ type:'file', class:"file"}
+        %input{ type: 'submit', class:"commit", value:'Send',}  
