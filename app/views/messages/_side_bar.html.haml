@@ -2,14 +2,15 @@
   .side-bar
     .side-header 
       .s-h-box
-        %p.username ken
+        %p.username 
+          = current_user.name
         %ul.menu
-          %li
-          = link_to "#",class: "left-btn" do
-            = icon('far fa-edit',  class: "icon")
-          %li 
-          = link_to "#",class: "right-btn" do
-            = icon('fas fa-cog',  class: "icon")
+          %li.icon
+            = link_to "#" do
+              = icon('far','edit',class:"ro")
+          %li.icon
+            = link_to edit_user_path(current_user) do
+              = icon('fas','cog',class:"ro")
     .groups
       .group
         .groupname
