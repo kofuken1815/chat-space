@@ -6,26 +6,19 @@
           = current_user.name
         %ul.menu
           %li.icon
-            = link_to "#" do
+            = link_to new_group_path(current_user),method: :get do
               = icon('far','edit',class:"ro")
           %li.icon
             = link_to edit_user_path(current_user) do
               = icon('fas','cog',class:"ro")
     .groups
-      .group
-        .groupname
-          てっくきゃんぷ
-        .grouptext
-          めっせーじはないです
-      .group
-        .groupname
-          てっくきゃんぷ
-        .grouptext
-          めっせーじはないです
-      .group
-        .groupname
-          てっくきゃんぷ
-        .grouptext
-          めっせーじはないです    
+      - current_user.groups.each do |group|
+        .group 
+          = link_to '#' do
+            .groupname 
+              = group.name 
+            .grouptext
+              メッセージはまだありません
+        
 
 
