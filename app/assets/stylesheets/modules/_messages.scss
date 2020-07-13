@@ -51,14 +51,20 @@
         color: #ffffff;
         font-weight: bold;
         padding: 20px 20px 40px;
+        text-decoration: none;
         .groupname {
           font-size: 15px;
           width: 260px;
           margin-block-end: 5px;
+          color: #fff;
         }
         .grouptext {
           font-size: 11px;
           width: 260px;
+          color: #fff;
+        }
+        .ka{
+          text-decoration: none;
         }
       }
     }
@@ -108,9 +114,6 @@
       background-color: #fafafa;
       padding-left: 40px;
       padding-right: auto;
-      .space{
-        height: 35px;
-      }
       .message{
         padding-block-start: 35px;
         padding-block-end: 11px;
@@ -126,6 +129,7 @@
             color: #999999;
             font-size: 12px;
             margin-bottom: auto;
+            margin-inline-start: 5px;
           }
         }
         .content{
