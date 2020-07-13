@@ -2,38 +2,22 @@
   .chat-main
     .group-info
       .left-box
-        .current-group test
+        .current-group
+          = @group.name
         %ul.member-list 
           Member: 
           %li.member
-            ken 
-          %li.member
-            ken 
-          %li.member
-            ken 
-      = link_to "#", class: "edit-btn" do
+            - @group.users.each do |user|
+              = user.name
+      = link_to edit_group_path(@group.id), class: "edit-btn" do
         edit
     .message-list
-      .message
-        .info 
-          .owner kenkofunakenkofuna
-          .date 2020/07/09(Thu)
-        .content 夏
-      .message
-        .info 
-          .owner kenkofunakenkofuna
-          .date 2020/07/09(Thu)
-        .content 冬
-      .message
-        .info 
-          .owner kenkofunakenkofuna
-          .date 2020/07/09(Thu)
-        .content 冬
+      = render @messages
     .message-form
-      %form.new-message
+      = form_with model: [@group,@message], html: {class:"new-message"},local: true do |f|
         .message-box 
-          %input{ placeholder: 'type a message', class:"text", type:'text'}
-          %label.image
+          = f.text_field :content, placeholder: 'type a message', class:"text"
+          = f.label :image,class:'image' do
             = icon('far fa-image', class:"form-icon")
-            %input{ type:'file', class:"file"}
-        %input{ type: 'submit', class:"commit", value:'Send',}  
+            = f.file_field :image, class: 'file'
+        = f.submit 'Send', class: 'commit'
