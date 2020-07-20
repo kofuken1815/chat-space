@@ -1,4 +1,4 @@
-.wapper
+.wrapper
   .chat-main
     .group-info
       .left-box
@@ -16,7 +16,7 @@
     .message-form
       = form_with model: [@group,@message], html: {class:"new-message"},local: true do |f|
         .message-box 
-          = f.text_field :content, placeholder: 'type a message', class:"text"
+          = f.text_field :content, placeholder: 'type a message', class:'text'
           = f.label :image,class:'image' do
             = icon('far fa-image', class:"form-icon")
             = f.file_field :image, class: 'file'
